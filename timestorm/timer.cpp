@@ -35,7 +35,7 @@ T const timer<T>::get_time() {
   case timescale::AUTO:
   default:
     {
-      float const nanoseconds = std::chrono::duration_cast<std::chrono::nanoseconds>( std::chrono::system_clock::now() - time_start).count();
+      T const nanoseconds = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count();
       if(nanoseconds < 1000) {
         scale = timescale::NANOSECONDS;
         return nanoseconds;
@@ -49,7 +49,7 @@ T const timer<T>::get_time() {
         scale = timescale::SECONDS;
         return nanoseconds / static_cast<T>(1'000'000'000);
       } else {
-        float const seconds = std::chrono::duration_cast<std::chrono::seconds>( std::chrono::system_clock::now() - time_start).count();
+        T const seconds = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - time_start).count();
         if(seconds < 60) {
           scale = timescale::SECONDS;
           return seconds;
@@ -95,7 +95,7 @@ std::string const timer<T>::get_unit() {
   case timescale::AUTO:
   default:
     {
-      float const nanoseconds = std::chrono::duration_cast<std::chrono::nanoseconds>( std::chrono::system_clock::now() - time_start).count();
+      T const nanoseconds = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count();
       if(nanoseconds < 1000) {
         scale = timescale::NANOSECONDS;
         return get_unit();
@@ -109,7 +109,7 @@ std::string const timer<T>::get_unit() {
         scale = timescale::SECONDS;
         return get_unit();
       } else {
-        float const seconds = std::chrono::duration_cast<std::chrono::seconds>( std::chrono::system_clock::now() - time_start).count();
+        T const seconds = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - time_start).count();
         if(seconds < 60) {
           scale = timescale::SECONDS;
           return get_unit();
