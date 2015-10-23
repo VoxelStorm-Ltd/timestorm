@@ -26,7 +26,7 @@ public:
   std::string suffix;                                                           // what to output when finished after the time value
   timescale scale = timescale::AUTO;                                            // on what timescale to report the results
 
-  timer(timescale scale = timescale::AUTO,
+  timer(timescale new_scale = timescale::AUTO,
         std::string const &message_pre  = "Done in ",
         std::string const &message_post = ".");
   timer(std::string const &message_pre  = "Done in ",

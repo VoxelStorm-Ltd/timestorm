@@ -4,10 +4,10 @@
 namespace timestorm {
 
 template<typename T>
-timer<T>::timer(timescale scale,
+timer<T>::timer(timescale new_scale,
                 std::string const &message_pre,
                 std::string const &message_post)
-  : scale(scale),
+  : scale(new_scale),
     prefix(message_pre),
     suffix(message_post) {
   /// Default constructor
