@@ -7,9 +7,9 @@ template<typename T>
 timer<T>::timer(timescale new_scale,
                 std::string const &message_pre,
                 std::string const &message_post)
-  : scale(new_scale),
-    prefix(message_pre),
-    suffix(message_post) {
+  : prefix(message_pre),
+    suffix(message_post),
+    scale(new_scale) {
   /// Default constructor
 }
 
