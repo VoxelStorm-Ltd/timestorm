@@ -25,7 +25,7 @@ timer<T>::timer(std::string const &message_pre,
 template<typename T>
 timer<T>::~timer() {
   /// Default destructor
-  std::cout << prefix << get_time() << get_unit() << suffix << std::endl;                  // output the time on destruction
+  std::cout << prefix << get_time() << get_unit() << suffix << std::endl;       // output the time on destruction
 }
 
 template<typename T>
@@ -36,6 +36,7 @@ T const timer<T>::get_time() {
   default:
     {
       T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
+      int64_t constexpr const trillion = int64_t(1'000'000) * int64_t(1'000'000); // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
       if(nanoseconds < 1000) {
         scale = timescale::NANOSECONDS;
         return nanoseconds;
@@ -45,7 +46,7 @@ T const timer<T>::get_time() {
       } else if(nanoseconds < 1'000'000'000) {
         scale = timescale::MILLISECONDS;
         return nanoseconds / static_cast<T>(1'000'000);
-      } else if(nanoseconds < 1'000'000'000'000) {
+      } else if(nanoseconds < trillion) {
         scale = timescale::SECONDS;
         return nanoseconds / static_cast<T>(1'000'000'000);
       } else {
@@ -96,6 +97,7 @@ std::string const timer<T>::get_unit() {
   default:
     {
       T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
+      int64_t constexpr const trillion = int64_t(1'000'000) * int64_t(1'000'000); // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
       if(nanoseconds < 1000) {
         scale = timescale::NANOSECONDS;
         return get_unit();
@@ -105,7 +107,7 @@ std::string const timer<T>::get_unit() {
       } else if(nanoseconds < 1'000'000'000) {
         scale = timescale::MILLISECONDS;
         return get_unit();
-      } else if(nanoseconds < 1'000'000'000'000) {
+      } else if(nanoseconds < trillion) {
         scale = timescale::SECONDS;
         return get_unit();
       } else {
