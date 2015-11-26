@@ -7,10 +7,10 @@ template<typename T>
 timer<T>::timer(timescale new_scale,
                 std::string const &message_pre,
                 std::string const &message_post)
-  : prefix(message_pre),
-    suffix(message_post),
+  : prefix([message_pre]{return message_pre;}),
+    suffix([message_post]{return message_post;}),
     scale(new_scale) {
-  /// Default constructor
+  /// Passthrough constructor
 }
 
 template<typename T>
@@ -23,9 +23,28 @@ timer<T>::timer(std::string const &message_pre,
 }
 
 template<typename T>
+timer<T>::timer(timescale new_scale,
+                std::function<std::string()> const &function_pre,
+                std::function<std::string()> const &function_post)
+  : prefix(function_pre),
+    suffix(function_post),
+    scale(new_scale) {
+  /// Default constructor
+}
+
+template<typename T>
+timer<T>::timer(std::function<std::string()> const &function_pre,
+                std::function<std::string()> const &function_post)
+  : timer(timescale::AUTO,
+          function_pre,
+          function_post) {
+  /// Passthrough constructor
+}
+
+template<typename T>
 timer<T>::~timer() {
   /// Default destructor
-  std::cout << prefix << get_time() << get_unit() << suffix << std::endl;       // output the time on destruction
+  std::cout << prefix() << get_time() << get_unit() << suffix() << std::endl;   // output the time on destruction
 }
 
 template<typename T>
