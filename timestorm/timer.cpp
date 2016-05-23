@@ -65,7 +65,7 @@ T const timer<T>::get_time() {
       } else if(nanoseconds < 1'000'000'000) {
         scale = timescale::MILLISECONDS;
         return nanoseconds / static_cast<T>(1'000'000);
-      } else if(nanoseconds < trillion) {
+      } else if(static_cast<int64_t>(nanoseconds) < trillion) {
         scale = timescale::SECONDS;
         return nanoseconds / static_cast<T>(1'000'000'000);
       } else {
@@ -126,7 +126,7 @@ std::string const timer<T>::get_unit() {
       } else if(nanoseconds < 1'000'000'000) {
         scale = timescale::MILLISECONDS;
         return get_unit();
-      } else if(nanoseconds < trillion) {
+      } else if(static_cast<int64_t>(nanoseconds) < trillion) {
         scale = timescale::SECONDS;
         return get_unit();
       } else {
