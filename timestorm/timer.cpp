@@ -44,7 +44,19 @@ timer<T>::timer(std::function<std::string()> const &function_pre,
 template<typename T>
 timer<T>::~timer() {
   /// Default destructor
-  std::cout << prefix() << get_time() << get_unit() << suffix() << std::endl;   // output the time on destruction
+  output();                                                                     // output the time on destruction
+}
+
+template<typename T>
+void timer<T>::output() {
+  /// Output the present time
+  std::cout << prefix() << get_time() << get_unit() << suffix() << std::endl;
+}
+
+template<typename T>
+void timer<T>::reset() {
+  /// Reset the timer to zero
+  time_start = std::chrono::system_clock::now();
 }
 
 template<typename T>

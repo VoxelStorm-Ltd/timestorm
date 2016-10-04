@@ -39,6 +39,8 @@ public:
         std::function<std::string()> const &function_post = []{return ".";});
   ~timer();
 
+  void output();
+  void reset();
   T const get_time();
   std::string const get_unit();
 };
