@@ -4,19 +4,9 @@
 #include <chrono>
 #include <string>
 #include <functional>
+#include "timescale.h"
 
 namespace timestorm {
-
-enum class timescale {
-  AUTO,
-  NANOSECONDS,
-  MICROSECONDS,
-  MILLISECONDS,
-  SECONDS,
-  MINUTES,
-  HOURS,
-  DAYS,
-};
 
 template<typename T>
 class timer {

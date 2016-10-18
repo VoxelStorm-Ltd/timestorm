@@ -1,0 +1,19 @@
+#ifndef TIMESTORM_TIMESCALE_H_INCLUDED
+#define TIMESTORM_TIMESCALE_H_INCLUDED
+
+namespace timestorm {
+
+enum class timescale {
+  AUTO,
+  NANOSECONDS,
+  MICROSECONDS,
+  MILLISECONDS,
+  SECONDS,
+  MINUTES,
+  HOURS,
+  DAYS,
+};
+
+}
+
+#endif // TIMESTORM_TIMESCALE_H_INCLUDED
