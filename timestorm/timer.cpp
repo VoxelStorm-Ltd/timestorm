@@ -147,7 +147,6 @@ std::string const timer<T>::get_unit() {
           scale = timescale::SECONDS;
           return get_unit();
         } else if(seconds < 60 * 60) {
-          scale = timescale::MINUTES;
           return get_unit();
         } else if(seconds < 60 * 60 * 24) {
           scale = timescale::HOURS;
