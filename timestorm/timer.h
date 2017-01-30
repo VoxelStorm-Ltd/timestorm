@@ -33,6 +33,9 @@ public:
   void reset();
   T const get_time();
   std::string const get_unit();
+
+  void set_prefix(std::string const &new_prefix);
+  void set_suffix(std::string const &new_suffix);
 };
 
 }

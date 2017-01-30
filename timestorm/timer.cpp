@@ -173,6 +173,15 @@ std::string const timer<T>::get_unit() {
   }
 }
 
+template<typename T>
+void timer<T>::set_prefix(std::string const &new_prefix) {
+  prefix = [new_prefix]{return new_prefix;};
+}
+template<typename T>
+void timer<T>::set_suffix(std::string const &new_suffix) {
+  suffix = [new_suffix]{return new_suffix;};
+}
+
 // explicit instantiations
 template class timer<float>;
 template class timer<double>;
