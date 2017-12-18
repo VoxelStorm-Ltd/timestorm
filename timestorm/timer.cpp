@@ -64,6 +64,7 @@ T const timer<T>::get_time() {
   /// Return a value containing the type in whatever format is desired
   switch(scale) {
   case timescale::AUTO:
+    [[fallthrough]];
   default:
     {
       T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
@@ -97,6 +98,7 @@ T const timer<T>::get_time() {
         }
       }
     }
+    [[fallthrough]];
   case timescale::NANOSECONDS:
     return static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>( std::chrono::system_clock::now() - time_start).count());
   case timescale::MICROSECONDS:
@@ -125,6 +127,7 @@ template<typename T>
 std::string const timer<T>::get_unit() {
   switch(scale) {
   case timescale::AUTO:
+    [[fallthrough]];
   default:
     {
       T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
@@ -158,6 +161,7 @@ std::string const timer<T>::get_unit() {
         }
       }
     }
+    [[fallthrough]];
   case timescale::NANOSECONDS:
     return "ns";
   case timescale::MICROSECONDS:
