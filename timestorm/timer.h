@@ -169,7 +169,7 @@ T const timer<T, sink_t>::get_time() {
   default:
     {
       T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
-      int64_t constexpr const trillion = int64_t(1'000'000) * int64_t(1'000'000); // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
+      int64_t constexpr trillion = int64_t(1'000'000) * int64_t(1'000'000);     // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
       if(nanoseconds < 1000) {
         scale = timescale::NANOSECONDS;
         return nanoseconds;
@@ -232,7 +232,7 @@ std::string const timer<T, sink_t>::get_unit() {
   default:
     {
       T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
-      int64_t constexpr const trillion = int64_t(1'000'000) * int64_t(1'000'000); // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
+      int64_t constexpr trillion = int64_t(1'000'000) * int64_t(1'000'000);     // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
       if(nanoseconds < 1000) {
         scale = timescale::NANOSECONDS;
         return get_unit();
