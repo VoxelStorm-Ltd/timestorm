@@ -5,7 +5,10 @@
 #include <string>
 #include <functional>
 #include <iostream>
+#include <iomanip>
 #include "timescale.h"
+
+//#define TIMESTORM_NO_UNICODE
 
 namespace timestorm {
 
@@ -141,7 +144,6 @@ timer<T, sink_t>::timer(sink_t &this_sink,
   /// Passthrough constructor: function, default scale
 }
 
-
 template<typename T, typename sink_t>
 timer<T, sink_t>::~timer() {
   /// Default destructor
@@ -151,7 +153,10 @@ timer<T, sink_t>::~timer() {
 template<typename T, typename sink_t>
 void timer<T, sink_t>::output() {
   /// Output the present time
-  sink << prefix() << get_time() << get_unit() << suffix();
+  sink << prefix() << std::fixed << std::setprecision(1) << get_time() << get_unit() << suffix();
+  if constexpr(std::is_same<sink_t, std::ostream>::value) {                     // flush std::ostream only
+    sink << std::flush;
+  }
 }
 
 template<typename T, typename sink_t>
@@ -266,7 +271,11 @@ std::string const timer<T, sink_t>::get_unit() {
   case timescale::NANOSECONDS:
     return "ns";
   case timescale::MICROSECONDS:
-    return "us";
+    #ifdef TIMESTORM_NO_UNICODE
+      return "us";
+    #else
+      return "μs";
+    #endif // TIMESTORM_NO_UNICODE
   case timescale::MILLISECONDS:
     return "ms";
   case timescale::SECONDS:
