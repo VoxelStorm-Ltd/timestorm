@@ -169,9 +169,8 @@ template<typename T, typename sink_t>
 T const timer<T, sink_t>::get_time() {
   /// Return a value containing the type in whatever format is desired
   switch(scale) {
+  case timescale::DAYS:
   case timescale::AUTO:
-    [[fallthrough]];
-  default:
     {
       T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
       int64_t constexpr trillion = int64_t(1'000'000) * int64_t(1'000'000);     // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
@@ -232,9 +231,8 @@ T const timer<T, sink_t>::get_time() {
 template<typename T, typename sink_t>
 std::string const timer<T, sink_t>::get_unit() {
   switch(scale) {
+  case timescale::DAYS:
   case timescale::AUTO:
-    [[fallthrough]];
-  default:
     {
       T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
       int64_t constexpr trillion = int64_t(1'000'000) * int64_t(1'000'000);     // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
