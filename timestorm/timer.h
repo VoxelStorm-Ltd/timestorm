@@ -226,6 +226,7 @@ T const timer<T, sink_t>::get_time() {
     //return std::chrono::duration_cast<std::chrono::nanoseconds>( std::chrono::system_clock::now() - time_start).count() / (1'000'000 * 60 * 60);
     return static_cast<T>(std::chrono::duration_cast<std::chrono::minutes>( std::chrono::system_clock::now() - time_start).count()) / static_cast<T>(60);
   }
+  return {};                                                                    // not actually reachable
 }
 
 template<typename T, typename sink_t>
@@ -283,6 +284,7 @@ std::string const timer<T, sink_t>::get_unit() {
   case timescale::HOURS:
     return "h";
   }
+  return {};                                                                    // not actually reachable
 }
 
 template<typename T, typename sink_t>
