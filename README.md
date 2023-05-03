@@ -79,7 +79,7 @@ if(success) {
   void set_suffix(std::string const &new_suffix);
 ```
 
-## Use with LogStorm
+## Use with [LogStorm](https://github.com/VoxelStorm-Ltd/logstorm)
 
 Simply pass the logger you wish to use as the first parameter:
 
