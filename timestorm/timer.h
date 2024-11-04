@@ -21,7 +21,7 @@ public:
 
   std::function<std::string()> prefix;                                          // what to run to generate output when finished before the time value
   std::function<std::string()> suffix;                                          // what to run to generate output when finished after the time value
-  timescale scale = timescale::AUTO;                                            // on what timescale to report the results
+  timescale scale{timescale::AUTO};                                             // on what timescale to report the results
 
   timer(timescale new_scale = timescale::AUTO,
         std::string const &message_pre  = "Done in ",
@@ -172,8 +172,8 @@ T const timer<T, sink_t>::get_time() {
   case timescale::DAYS:
   case timescale::AUTO:
     {
-      T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
-      int64_t constexpr trillion = int64_t(1'000'000) * int64_t(1'000'000);     // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
+      T const nanoseconds{static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count())};
+      int64_t constexpr trillion{int64_t{1'000'000} * int64_t{1'000'000}};      // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
       if(nanoseconds < 1000) {
         scale = timescale::NANOSECONDS;
         return nanoseconds;
@@ -187,7 +187,7 @@ T const timer<T, sink_t>::get_time() {
         scale = timescale::SECONDS;
         return nanoseconds / static_cast<T>(1'000'000'000);
       } else {
-        T const seconds = static_cast<T>(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - time_start).count());
+        T const seconds{static_cast<T>(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - time_start).count())};
         if(seconds < 60) {
           scale = timescale::SECONDS;
           return seconds;
@@ -235,8 +235,8 @@ std::string const timer<T, sink_t>::get_unit() {
   case timescale::DAYS:
   case timescale::AUTO:
     {
-      T const nanoseconds = static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count());
-      int64_t constexpr trillion = int64_t(1'000'000) * int64_t(1'000'000);     // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
+      T const nanoseconds{static_cast<T>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - time_start).count())};
+      int64_t constexpr trillion{int64_t{1'000'000} * int64_t{1'000'000}};      // this is a hack - see http://stackoverflow.com/questions/33644412/how-to-silence-long-long-integer-constant-warning-from-gcc
       if(nanoseconds < 1000) {
         scale = timescale::NANOSECONDS;
         return get_unit();
@@ -250,7 +250,7 @@ std::string const timer<T, sink_t>::get_unit() {
         scale = timescale::SECONDS;
         return get_unit();
       } else {
-        T const seconds = static_cast<T>(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - time_start).count());
+        T const seconds{static_cast<T>(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - time_start).count())};
         if(seconds < 60) {
           scale = timescale::SECONDS;
           return get_unit();
