@@ -1,5 +1,4 @@
-#ifndef TIMESTORM_TIMESCALE_H_INCLUDED
-#define TIMESTORM_TIMESCALE_H_INCLUDED
+#pragma once
 
 namespace timestorm {
 
@@ -15,5 +14,3 @@ enum class timescale {
 };
 
 }
-
-#endif // TIMESTORM_TIMESCALE_H_INCLUDED

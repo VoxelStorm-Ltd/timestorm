@@ -1,7 +1,4 @@
-#ifndef TIMESTORM_H_INCLUDED
-#define TIMESTORM_H_INCLUDED
+#pragma once
 
 #include "timescale.h"
 #include "timer.h"
-
-#endif // TIMESTORM_H_INCLUDED

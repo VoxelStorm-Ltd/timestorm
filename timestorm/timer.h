@@ -1,5 +1,4 @@
-#ifndef TIMESTORM_TIMER_H_INCLUDED
-#define TIMESTORM_TIMER_H_INCLUDED
+#pragma once
 
 #include <chrono>
 #include <string>
@@ -297,5 +296,3 @@ void timer<T, sink_t>::set_suffix(std::string const &new_suffix) {
 }
 
 }
-
-#endif // TIMESTORM_TIMER_H_INCLUDED
