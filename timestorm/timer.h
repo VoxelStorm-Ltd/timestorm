@@ -13,8 +13,12 @@ namespace timestorm {
 
 using default_timer_type = float;
 
-template <typename T>
-concept streamlike = std::derived_from<T, std::ostream>;                        // constrain sink_t to stream-like types
+template<typename T>
+concept streamlike = std::derived_from<T, std::ostream> || requires(T sink, std::string const &str) {
+  // constrain sink_t to stream-like types by requiring either derivation from ostream or a stream operator that accepts strings
+  { sink << str };
+};
+
 
 template<typename T = default_timer_type, typename sink_t = std::ostream>
 class timer {
