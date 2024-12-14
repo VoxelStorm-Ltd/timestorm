@@ -11,7 +11,12 @@
 
 namespace timestorm {
 
-template<typename T, typename sink_t = std::ostream>
+using default_timer_type = float;
+
+template <typename T>
+concept streamlike = std::derived_from<T, std::ostream>;                        // constrain sink_t to stream-like types
+
+template<typename T = default_timer_type, typename sink_t = std::ostream>
 class timer {
   sink_t &sink;
 
@@ -32,18 +37,18 @@ public:
         std::function<std::string()> const &function_post = []{return ".\n";});
   timer(std::function<std::string()> const &function_pre  = []{return "Done in ";},
         std::function<std::string()> const &function_post = []{return ".\n";});
-  timer(sink_t &sink,
+  timer(streamlike auto &sink,
         timescale new_scale = timescale::AUTO,
         std::string const &message_pre  = "Done in ",
         std::string const &message_post = ".\n");
-  timer(sink_t &sink,
+  timer(streamlike auto &sink,
         std::string const &message_pre  = "Done in ",
         std::string const &message_post = ".\n");
-  timer(sink_t &sink,
+  timer(streamlike auto &sink,
         timescale new_scale = timescale::AUTO,
         std::function<std::string()> const &function_pre  = []{return "Done in ";},
         std::function<std::string()> const &function_post = []{return ".\n";});
-  timer(sink_t &sink,
+  timer(streamlike auto &sink,
         std::function<std::string()> const &function_pre  = []{return "Done in ";},
         std::function<std::string()> const &function_post = []{return ".\n";});
   ~timer();
@@ -98,7 +103,7 @@ timer<T, sink_t>::timer(std::function<std::string()> const &function_pre,
 }
 
 template<typename T, typename sink_t>
-timer<T, sink_t>::timer(sink_t &this_sink,
+timer<T, sink_t>::timer(streamlike auto &this_sink,
                         timescale new_scale,
                         std::string const &message_pre,
                         std::string const &message_post)
@@ -110,7 +115,7 @@ timer<T, sink_t>::timer(sink_t &this_sink,
 }
 
 template<typename T, typename sink_t>
-timer<T, sink_t>::timer(sink_t &this_sink,
+timer<T, sink_t>::timer(streamlike auto &this_sink,
                         std::string const &message_pre,
                         std::string const &message_post)
   : timer(this_sink,
@@ -121,7 +126,7 @@ timer<T, sink_t>::timer(sink_t &this_sink,
 }
 
 template<typename T, typename sink_t>
-timer<T, sink_t>::timer(sink_t &this_sink,
+timer<T, sink_t>::timer(streamlike auto &this_sink,
                         timescale new_scale,
                         std::function<std::string()> const &function_pre,
                         std::function<std::string()> const &function_post)
@@ -133,7 +138,7 @@ timer<T, sink_t>::timer(sink_t &this_sink,
 }
 
 template<typename T, typename sink_t>
-timer<T, sink_t>::timer(sink_t &this_sink,
+timer<T, sink_t>::timer(streamlike auto &this_sink,
                         std::function<std::string()> const &function_pre,
                         std::function<std::string()> const &function_post)
   : timer(this_sink,
