@@ -1,10 +1,13 @@
 #pragma once
 
 #include <chrono>
-#include <string>
+#include <concepts>
+#include <cstdint>
 #include <functional>
-#include <iostream>
 #include <iomanip>
+#include <iostream>
+#include <string>
+#include <type_traits>
 #include "timescale.h"
 
 //#define TIMESTORM_NO_UNICODE
