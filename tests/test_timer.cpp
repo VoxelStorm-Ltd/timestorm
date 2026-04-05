@@ -1,6 +1,7 @@
 #include <catch2/catch_test_macros.hpp>
 #include <chrono>
 #include <functional>
+#include <set>
 #include <sstream>
 #include <string>
 #include <thread>
@@ -24,14 +25,17 @@ static std::string capture_output(timestorm::timescale scale,
 // ─────────────────────────────────────────────────────────────────────────────
 
 TEST_CASE("timescale enum values are all distinct", "[timescale]") {
-  // Verify each enumerator exists and is distinct from the others
-  CHECK(timestorm::timescale::AUTO         != timestorm::timescale::NANOSECONDS);
-  CHECK(timestorm::timescale::NANOSECONDS  != timestorm::timescale::MICROSECONDS);
-  CHECK(timestorm::timescale::MICROSECONDS != timestorm::timescale::MILLISECONDS);
-  CHECK(timestorm::timescale::MILLISECONDS != timestorm::timescale::SECONDS);
-  CHECK(timestorm::timescale::SECONDS      != timestorm::timescale::MINUTES);
-  CHECK(timestorm::timescale::MINUTES      != timestorm::timescale::HOURS);
-  CHECK(timestorm::timescale::HOURS        != timestorm::timescale::DAYS);
+  std::set<timestorm::timescale> const values{
+    timestorm::timescale::AUTO,
+    timestorm::timescale::NANOSECONDS,
+    timestorm::timescale::MICROSECONDS,
+    timestorm::timescale::MILLISECONDS,
+    timestorm::timescale::SECONDS,
+    timestorm::timescale::MINUTES,
+    timestorm::timescale::HOURS,
+    timestorm::timescale::DAYS,
+  };
+  CHECK(values.size() == 8);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
