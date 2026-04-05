@@ -25,13 +25,13 @@ static std::string capture_output(timestorm::timescale scale,
 
 TEST_CASE("timescale enum values are all distinct", "[timescale]") {
   // Verify each enumerator exists and is distinct from the others
-  CHECK(timestorm::timescale::AUTO        != timestorm::timescale::NANOSECONDS);
-  CHECK(timestorm::timescale::NANOSECONDS != timestorm::timescale::MICROSECONDS);
-  CHECK(timestorm::timescale::MICROSECONDS!= timestorm::timescale::MILLISECONDS);
-  CHECK(timestorm::timescale::MILLISECONDS!= timestorm::timescale::SECONDS);
-  CHECK(timestorm::timescale::SECONDS     != timestorm::timescale::MINUTES);
-  CHECK(timestorm::timescale::MINUTES     != timestorm::timescale::HOURS);
-  CHECK(timestorm::timescale::HOURS       != timestorm::timescale::DAYS);
+  CHECK(timestorm::timescale::AUTO         != timestorm::timescale::NANOSECONDS);
+  CHECK(timestorm::timescale::NANOSECONDS  != timestorm::timescale::MICROSECONDS);
+  CHECK(timestorm::timescale::MICROSECONDS != timestorm::timescale::MILLISECONDS);
+  CHECK(timestorm::timescale::MILLISECONDS != timestorm::timescale::SECONDS);
+  CHECK(timestorm::timescale::SECONDS      != timestorm::timescale::MINUTES);
+  CHECK(timestorm::timescale::MINUTES      != timestorm::timescale::HOURS);
+  CHECK(timestorm::timescale::HOURS        != timestorm::timescale::DAYS);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
