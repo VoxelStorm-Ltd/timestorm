@@ -32,7 +32,7 @@ if(TIMESTORM_ENABLE_COVERAGE)
   target_link_options(timestorm_tests PRIVATE --coverage)
 endif()
 
-list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
+list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
 include(CTest)
 include(Catch)
 catch_discover_tests(timestorm_tests)

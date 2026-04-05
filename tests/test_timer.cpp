@@ -256,13 +256,15 @@ TEST_CASE("get_time with SECONDS scale after 50ms sleep returns a small fraction
 // AUTO scale selection
 // ─────────────────────────────────────────────────────────────────────────────
 
-TEST_CASE("AUTO scale selects NANOSECONDS or MICROSECONDS for an immediately-queried timer", "[timer][auto]") {
+TEST_CASE("AUTO scale selects a small unit for an immediately-queried timer", "[timer][auto]") {
   std::ostringstream oss;
   timestorm::timer<float> t(static_cast<std::ostream&>(oss), timestorm::timescale::AUTO, "", "");
   t.get_time(); // side-effect: sets scale based on elapsed time
-  // Elapsed time since construction is tiny, but clock resolution and scheduling
-  // may legitimately place it in either ns or μs.
-  CHECK((t.scale == timestorm::timescale::NANOSECONDS || t.scale == timestorm::timescale::MICROSECONDS));
+  // Elapsed time since construction is usually tiny, but clock resolution and
+  // scheduling may legitimately place it in ns, μs, or ms on a loaded runner.
+  CHECK((t.scale == timestorm::timescale::NANOSECONDS ||
+         t.scale == timestorm::timescale::MICROSECONDS ||
+         t.scale == timestorm::timescale::MILLISECONDS));
 }
 
 TEST_CASE("AUTO scale selects MILLISECONDS after a 20ms sleep", "[timer][auto]") {

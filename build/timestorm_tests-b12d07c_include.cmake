@@ -1,0 +1,5 @@
+if(EXISTS "/home/runner/work/timestorm/timestorm/build/timestorm_tests-b12d07c_tests.cmake")
+  include("/home/runner/work/timestorm/timestorm/build/timestorm_tests-b12d07c_tests.cmake")
+else()
+  add_test(timestorm_tests_NOT_BUILT-b12d07c timestorm_tests_NOT_BUILT-b12d07c)
+endif()

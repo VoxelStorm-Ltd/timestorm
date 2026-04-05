@@ -1,0 +1,583 @@
+Start testing: Apr 05 23:29 UTC
+----------------------------------------------------------
+1/29 Testing: AUTO scale output contains a recognised time unit
+1/29 Test: AUTO scale output contains a recognised time unit
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "AUTO scale output contains a recognised time unit"
+Directory: /home/runner/work/timestorm/timestorm/build
+"AUTO scale output contains a recognised time unit" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "AUTO scale output contains a recognised time unit"
+Randomness seeded to: 2910787438
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"AUTO scale output contains a recognised time unit" end time: Apr 05 23:29 UTC
+"AUTO scale output contains a recognised time unit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/29 Testing: AUTO scale selects MILLISECONDS after a 20ms sleep
+2/29 Test: AUTO scale selects MILLISECONDS after a 20ms sleep
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "AUTO scale selects MILLISECONDS after a 20ms sleep"
+Directory: /home/runner/work/timestorm/timestorm/build
+"AUTO scale selects MILLISECONDS after a 20ms sleep" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "AUTO scale selects MILLISECONDS after a 20ms sleep"
+Randomness seeded to: 1063999215
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"AUTO scale selects MILLISECONDS after a 20ms sleep" end time: Apr 05 23:29 UTC
+"AUTO scale selects MILLISECONDS after a 20ms sleep" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/29 Testing: AUTO scale selects a small unit for an immediately-queried timer
+3/29 Test: AUTO scale selects a small unit for an immediately-queried timer
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "AUTO scale selects a small unit for an immediately-queried timer"
+Directory: /home/runner/work/timestorm/timestorm/build
+"AUTO scale selects a small unit for an immediately-queried timer" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "AUTO scale selects a small unit for an immediately-queried timer"
+Randomness seeded to: 3367660328
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"AUTO scale selects a small unit for an immediately-queried timer" end time: Apr 05 23:29 UTC
+"AUTO scale selects a small unit for an immediately-queried timer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/29 Testing: timer<float> compiles, constructs, and outputs
+4/29 Test: timer<float> compiles, constructs, and outputs
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "timer<float> compiles\, constructs\, and outputs"
+Directory: /home/runner/work/timestorm/timestorm/build
+"timer<float> compiles, constructs, and outputs" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "timer<float> compiles\, constructs\, and outputs"
+Randomness seeded to: 435624210
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"timer<float> compiles, constructs, and outputs" end time: Apr 05 23:29 UTC
+"timer<float> compiles, constructs, and outputs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/29 Testing: default prefix and suffix appear in output
+5/29 Test: default prefix and suffix appear in output
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "default prefix and suffix appear in output"
+Directory: /home/runner/work/timestorm/timestorm/build
+"default prefix and suffix appear in output" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "default prefix and suffix appear in output"
+Randomness seeded to: 3552509057
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"default prefix and suffix appear in output" end time: Apr 05 23:29 UTC
+"default prefix and suffix appear in output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/29 Testing: prefix and suffix functions are callable
+6/29 Test: prefix and suffix functions are callable
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "prefix and suffix functions are callable"
+Directory: /home/runner/work/timestorm/timestorm/build
+"prefix and suffix functions are callable" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "prefix and suffix functions are callable"
+Randomness seeded to: 2501941936
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"prefix and suffix functions are callable" end time: Apr 05 23:29 UTC
+"prefix and suffix functions are callable" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/29 Testing: set_prefix and set_suffix can both be changed before output
+7/29 Test: set_prefix and set_suffix can both be changed before output
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "set_prefix and set_suffix can both be changed before output"
+Directory: /home/runner/work/timestorm/timestorm/build
+"set_prefix and set_suffix can both be changed before output" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "set_prefix and set_suffix can both be changed before output"
+Randomness seeded to: 3020223871
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"set_prefix and set_suffix can both be changed before output" end time: Apr 05 23:29 UTC
+"set_prefix and set_suffix can both be changed before output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/29 Testing: scale member reflects explicitly requested timescale
+8/29 Test: scale member reflects explicitly requested timescale
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "scale member reflects explicitly requested timescale"
+Directory: /home/runner/work/timestorm/timestorm/build
+"scale member reflects explicitly requested timescale" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "scale member reflects explicitly requested timescale"
+Randomness seeded to: 1101817208
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"scale member reflects explicitly requested timescale" end time: Apr 05 23:29 UTC
+"scale member reflects explicitly requested timescale" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/29 Testing: custom string prefix and suffix appear in output
+9/29 Test: custom string prefix and suffix appear in output
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "custom string prefix and suffix appear in output"
+Directory: /home/runner/work/timestorm/timestorm/build
+"custom string prefix and suffix appear in output" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "custom string prefix and suffix appear in output"
+Randomness seeded to: 296259095
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"custom string prefix and suffix appear in output" end time: Apr 05 23:29 UTC
+"custom string prefix and suffix appear in output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/29 Testing: get_time with MILLISECONDS scale after 30ms sleep is approximately correct
+10/29 Test: get_time with MILLISECONDS scale after 30ms sleep is approximately correct
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "get_time with MILLISECONDS scale after 30ms sleep is approximately correct"
+Directory: /home/runner/work/timestorm/timestorm/build
+"get_time with MILLISECONDS scale after 30ms sleep is approximately correct" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "get_time with MILLISECONDS scale after 30ms sleep is approximately correct"
+Randomness seeded to: 4179336068
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"get_time with MILLISECONDS scale after 30ms sleep is approximately correct" end time: Apr 05 23:29 UTC
+"get_time with MILLISECONDS scale after 30ms sleep is approximately correct" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/29 Testing: time_start is set to approximately the construction time
+11/29 Test: time_start is set to approximately the construction time
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "time_start is set to approximately the construction time"
+Directory: /home/runner/work/timestorm/timestorm/build
+"time_start is set to approximately the construction time" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "time_start is set to approximately the construction time"
+Randomness seeded to: 837378146
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"time_start is set to approximately the construction time" end time: Apr 05 23:29 UTC
+"time_start is set to approximately the construction time" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/29 Testing: set_prefix replaces the original prefix in output
+12/29 Test: set_prefix replaces the original prefix in output
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "set_prefix replaces the original prefix in output"
+Directory: /home/runner/work/timestorm/timestorm/build
+"set_prefix replaces the original prefix in output" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "set_prefix replaces the original prefix in output"
+Randomness seeded to: 3382594876
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"set_prefix replaces the original prefix in output" end time: Apr 05 23:29 UTC
+"set_prefix replaces the original prefix in output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/29 Testing: output contains a numeric value between prefix and suffix
+13/29 Test: output contains a numeric value between prefix and suffix
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "output contains a numeric value between prefix and suffix"
+Directory: /home/runner/work/timestorm/timestorm/build
+"output contains a numeric value between prefix and suffix" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "output contains a numeric value between prefix and suffix"
+Randomness seeded to: 1432728309
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"output contains a numeric value between prefix and suffix" end time: Apr 05 23:29 UTC
+"output contains a numeric value between prefix and suffix" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/29 Testing: timer<unsigned int> compiles, constructs, and outputs
+14/29 Test: timer<unsigned int> compiles, constructs, and outputs
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "timer<unsigned int> compiles\, constructs\, and outputs"
+Directory: /home/runner/work/timestorm/timestorm/build
+"timer<unsigned int> compiles, constructs, and outputs" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "timer<unsigned int> compiles\, constructs\, and outputs"
+Randomness seeded to: 4024853674
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"timer<unsigned int> compiles, constructs, and outputs" end time: Apr 05 23:29 UTC
+"timer<unsigned int> compiles, constructs, and outputs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/29 Testing: timescale enum values are all distinct
+15/29 Test: timescale enum values are all distinct
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "timescale enum values are all distinct"
+Directory: /home/runner/work/timestorm/timestorm/build
+"timescale enum values are all distinct" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "timescale enum values are all distinct"
+Randomness seeded to: 4054297749
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"timescale enum values are all distinct" end time: Apr 05 23:29 UTC
+"timescale enum values are all distinct" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/29 Testing: get_unit returns correct string for explicit timescales
+16/29 Test: get_unit returns correct string for explicit timescales
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "get_unit returns correct string for explicit timescales"
+Directory: /home/runner/work/timestorm/timestorm/build
+"get_unit returns correct string for explicit timescales" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "get_unit returns correct string for explicit timescales"
+Randomness seeded to: 134798766
+===============================================================================
+All tests passed (6 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"get_unit returns correct string for explicit timescales" end time: Apr 05 23:29 UTC
+"get_unit returns correct string for explicit timescales" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/29 Testing: timer<int> compiles, constructs, and outputs
+17/29 Test: timer<int> compiles, constructs, and outputs
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "timer<int> compiles\, constructs\, and outputs"
+Directory: /home/runner/work/timestorm/timestorm/build
+"timer<int> compiles, constructs, and outputs" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "timer<int> compiles\, constructs\, and outputs"
+Randomness seeded to: 4144821992
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"timer<int> compiles, constructs, and outputs" end time: Apr 05 23:29 UTC
+"timer<int> compiles, constructs, and outputs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/29 Testing: get_time in NANOSECONDS is positive shortly after construction
+18/29 Test: get_time in NANOSECONDS is positive shortly after construction
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "get_time in NANOSECONDS is positive shortly after construction"
+Directory: /home/runner/work/timestorm/timestorm/build
+"get_time in NANOSECONDS is positive shortly after construction" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "get_time in NANOSECONDS is positive shortly after construction"
+Randomness seeded to: 3532596945
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"get_time in NANOSECONDS is positive shortly after construction" end time: Apr 05 23:29 UTC
+"get_time in NANOSECONDS is positive shortly after construction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/29 Testing: function-based prefix/suffix with explicit scale
+19/29 Test: function-based prefix/suffix with explicit scale
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "function-based prefix/suffix with explicit scale"
+Directory: /home/runner/work/timestorm/timestorm/build
+"function-based prefix/suffix with explicit scale" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "function-based prefix/suffix with explicit scale"
+Randomness seeded to: 2221911021
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"function-based prefix/suffix with explicit scale" end time: Apr 05 23:29 UTC
+"function-based prefix/suffix with explicit scale" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/29 Testing: scale defaults to AUTO when not specified
+20/29 Test: scale defaults to AUTO when not specified
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "scale defaults to AUTO when not specified"
+Directory: /home/runner/work/timestorm/timestorm/build
+"scale defaults to AUTO when not specified" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "scale defaults to AUTO when not specified"
+Randomness seeded to: 1976605000
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"scale defaults to AUTO when not specified" end time: Apr 05 23:29 UTC
+"scale defaults to AUTO when not specified" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/29 Testing: reset() updates time_start to the current time
+21/29 Test: reset() updates time_start to the current time
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "reset() updates time_start to the current time"
+Directory: /home/runner/work/timestorm/timestorm/build
+"reset() updates time_start to the current time" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "reset() updates time_start to the current time"
+Randomness seeded to: 1665844620
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"reset() updates time_start to the current time" end time: Apr 05 23:29 UTC
+"reset() updates time_start to the current time" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/29 Testing: output contains the correct unit string for explicit scales
+22/29 Test: output contains the correct unit string for explicit scales
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "output contains the correct unit string for explicit scales"
+Directory: /home/runner/work/timestorm/timestorm/build
+"output contains the correct unit string for explicit scales" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "output contains the correct unit string for explicit scales"
+Randomness seeded to: 2865862083
+===============================================================================
+All tests passed (8 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"output contains the correct unit string for explicit scales" end time: Apr 05 23:29 UTC
+"output contains the correct unit string for explicit scales" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/29 Testing: output() can be called explicitly and multiple times
+23/29 Test: output() can be called explicitly and multiple times
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "output() can be called explicitly and multiple times"
+Directory: /home/runner/work/timestorm/timestorm/build
+"output() can be called explicitly and multiple times" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "output() can be called explicitly and multiple times"
+Randomness seeded to: 86731348
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"output() can be called explicitly and multiple times" end time: Apr 05 23:29 UTC
+"output() can be called explicitly and multiple times" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/29 Testing: timer<double> compiles, constructs, and outputs
+24/29 Test: timer<double> compiles, constructs, and outputs
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "timer<double> compiles\, constructs\, and outputs"
+Directory: /home/runner/work/timestorm/timestorm/build
+"timer<double> compiles, constructs, and outputs" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "timer<double> compiles\, constructs\, and outputs"
+Randomness seeded to: 1823447002
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"timer<double> compiles, constructs, and outputs" end time: Apr 05 23:29 UTC
+"timer<double> compiles, constructs, and outputs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/29 Testing: set_suffix replaces the original suffix in output
+25/29 Test: set_suffix replaces the original suffix in output
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "set_suffix replaces the original suffix in output"
+Directory: /home/runner/work/timestorm/timestorm/build
+"set_suffix replaces the original suffix in output" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "set_suffix replaces the original suffix in output"
+Randomness seeded to: 1026998605
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"set_suffix replaces the original suffix in output" end time: Apr 05 23:29 UTC
+"set_suffix replaces the original suffix in output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/29 Testing: get_time returns a non-negative value for all explicit scales
+26/29 Test: get_time returns a non-negative value for all explicit scales
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "get_time returns a non-negative value for all explicit scales"
+Directory: /home/runner/work/timestorm/timestorm/build
+"get_time returns a non-negative value for all explicit scales" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "get_time returns a non-negative value for all explicit scales"
+Randomness seeded to: 3945882422
+===============================================================================
+All tests passed (6 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"get_time returns a non-negative value for all explicit scales" end time: Apr 05 23:29 UTC
+"get_time returns a non-negative value for all explicit scales" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/29 Testing: reset() restarts the elapsed time counter
+27/29 Test: reset() restarts the elapsed time counter
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "reset() restarts the elapsed time counter"
+Directory: /home/runner/work/timestorm/timestorm/build
+"reset() restarts the elapsed time counter" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "reset() restarts the elapsed time counter"
+Randomness seeded to: 828895637
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"reset() restarts the elapsed time counter" end time: Apr 05 23:29 UTC
+"reset() restarts the elapsed time counter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/29 Testing: function-based prefix and suffix appear in output
+28/29 Test: function-based prefix and suffix appear in output
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "function-based prefix and suffix appear in output"
+Directory: /home/runner/work/timestorm/timestorm/build
+"function-based prefix and suffix appear in output" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "function-based prefix and suffix appear in output"
+Randomness seeded to: 487482079
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"function-based prefix and suffix appear in output" end time: Apr 05 23:29 UTC
+"function-based prefix and suffix appear in output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/29 Testing: get_time with SECONDS scale after 50ms sleep returns a small fractional second
+29/29 Test: get_time with SECONDS scale after 50ms sleep returns a small fractional second
+Command: "/home/runner/work/timestorm/timestorm/build/timestorm_tests" "get_time with SECONDS scale after 50ms sleep returns a small fractional second"
+Directory: /home/runner/work/timestorm/timestorm/build
+"get_time with SECONDS scale after 50ms sleep returns a small fractional second" start time: Apr 05 23:29 UTC
+Output:
+----------------------------------------------------------
+Filters: "get_time with SECONDS scale after 50ms sleep returns a small fractional second"
+Randomness seeded to: 4099430433
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"get_time with SECONDS scale after 50ms sleep returns a small fractional second" end time: Apr 05 23:29 UTC
+"get_time with SECONDS scale after 50ms sleep returns a small fractional second" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 05 23:29 UTC
