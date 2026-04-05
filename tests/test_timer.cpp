@@ -1,5 +1,4 @@
 #include <catch2/catch_test_macros.hpp>
-#include <catch2/catch_approx.hpp>
 
 #include <chrono>
 #include <functional>
@@ -10,7 +9,6 @@
 #include "timestorm/timestorm.h"
 
 using namespace timestorm;
-using Catch::Approx;
 
 // Capture timer output by using an ostringstream as the sink.
 // The timer is destroyed inside the braces, triggering its destructor output.
