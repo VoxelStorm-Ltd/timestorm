@@ -1,3 +1,12 @@
+cmake_minimum_required(VERSION 3.20)
+project(timestorm_tests CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+option(TIMESTORM_ENABLE_COVERAGE "Enable code coverage instrumentation (requires GCC/Clang)" OFF)
+
 include(FetchContent)
 
 FetchContent_Declare(
@@ -9,10 +18,12 @@ FetchContent_MakeAvailable(Catch2)
 
 add_executable(timestorm_tests
   test_timer.cpp
+  ../timestorm/timer.cpp
 )
 
+target_include_directories(timestorm_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
+
 target_link_libraries(timestorm_tests PRIVATE
-  timestorm
   Catch2::Catch2WithMain
 )
 
