@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtimestorm.a CMakeFiles/timestorm.dir/timestorm/timer.cpp.o
+/usr/bin/ranlib libtimestorm.a

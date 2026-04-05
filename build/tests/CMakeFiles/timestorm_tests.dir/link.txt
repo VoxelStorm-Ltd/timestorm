@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/timestorm_tests.dir/link.d CMakeFiles/timestorm_tests.dir/test_timer.cpp.o -o timestorm_tests  ../libtimestorm.a ../_deps/catch2-build/src/libCatch2Maind.a ../_deps/catch2-build/src/libCatch2d.a
