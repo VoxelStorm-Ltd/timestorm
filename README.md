@@ -1,5 +1,8 @@
 # TimeStorm
 
+[![Tests](https://github.com/VoxelStorm-Ltd/timestorm/actions/workflows/tests.yml/badge.svg)](https://github.com/VoxelStorm-Ltd/timestorm/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/VoxelStorm-Ltd/timestorm/branch/master/graph/badge.svg)](https://codecov.io/gh/VoxelStorm-Ltd/timestorm)
+
 VoxelStorm's C++ RAII timer library for one-line function and scope time-taken reporting.
 
 For simple logging of time taken within a function or a scope.  Can be combined with [LogStorm](https://github.com/VoxelStorm-Ltd/logstorm), or work standalone with `std::cout` or other streams.
