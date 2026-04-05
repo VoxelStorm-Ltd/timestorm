@@ -281,6 +281,7 @@ TEST_CASE("AUTO scale output contains a recognised time unit", "[timer][auto]") 
   bool const has_unit =
     out.find("ns") != std::string::npos ||
     out.find("μs") != std::string::npos ||
+    out.find("us") != std::string::npos ||
     out.find("ms") != std::string::npos ||
     out.find("s")  != std::string::npos;
   CHECK(has_unit);
