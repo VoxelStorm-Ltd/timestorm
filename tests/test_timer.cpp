@@ -127,7 +127,11 @@ TEST_CASE("get_unit returns correct string for explicit timescales", "[timer][ge
 
   SECTION("MICROSECONDS → μs") {
     timer<float> t(static_cast<std::ostream &>(oss), timescale::MICROSECONDS, "", "");
+#ifdef TIMESTORM_NO_UNICODE
+    CHECK(t.get_unit() == "us");
+#else
     CHECK(t.get_unit() == "μs");
+#endif
   }
 
   SECTION("MILLISECONDS → ms") {
@@ -156,16 +160,28 @@ TEST_CASE("output contains the correct unit string for explicit scales", "[timer
     CHECK(capture_output(timescale::NANOSECONDS,  "", "").find("ns") != std::string::npos);
   }
   SECTION("MICROSECONDS → μs in output") {
+#ifdef TIMESTORM_NO_UNICODE
+    CHECK(capture_output(timescale::MICROSECONDS, "", "").find("us") != std::string::npos);
+#else
     CHECK(capture_output(timescale::MICROSECONDS, "", "").find("μs") != std::string::npos);
+#endif
   }
   SECTION("MILLISECONDS → ms in output") {
     CHECK(capture_output(timescale::MILLISECONDS, "", "").find("ms") != std::string::npos);
   }
   SECTION("SECONDS → s in output") {
-    CHECK(capture_output(timescale::SECONDS,      "", "").find("s")  != std::string::npos);
+    std::string const out = capture_output(timescale::SECONDS, "", "");
+    // With empty suffix the output ends with the unit; use back() to avoid
+    // false matches against "ns", "μs", or "ms" which also contain 's'.
+    REQUIRE(!out.empty());
+    CHECK(out.back() == 's');
   }
   SECTION("MINUTES → m in output") {
-    CHECK(capture_output(timescale::MINUTES,      "", "").find("m")  != std::string::npos);
+    std::string const out = capture_output(timescale::MINUTES, "", "");
+    // With empty suffix the output ends with the unit; use back() to avoid
+    // false matches against "ms" which also contains 'm'.
+    REQUIRE(!out.empty());
+    CHECK(out.back() == 'm');
   }
   SECTION("HOURS → h in output") {
     CHECK(capture_output(timescale::HOURS,        "", "").find("h")  != std::string::npos);
@@ -205,10 +221,18 @@ TEST_CASE("get_time returns a non-negative value for all explicit scales", "[tim
   }
 }
 
-TEST_CASE("get_time in NANOSECONDS is positive immediately after construction", "[timer][get_time]") {
+TEST_CASE("get_time in NANOSECONDS is positive shortly after construction", "[timer][get_time]") {
   std::ostringstream oss;
   timer<float> t(static_cast<std::ostream &>(oss), timescale::NANOSECONDS, "", "");
-  CHECK(t.get_time() > 0.0f);
+
+  float elapsed = t.get_time();
+  auto const deadline = std::chrono::steady_clock::now() + std::chrono::milliseconds(10);
+  while(elapsed <= 0.0f && std::chrono::steady_clock::now() < deadline) {
+    std::this_thread::yield();
+    elapsed = t.get_time();
+  }
+
+  CHECK(elapsed > 0.0f);
 }
 
 TEST_CASE("get_time with MILLISECONDS scale after 30ms sleep is approximately correct", "[timer][get_time][accuracy]") {
@@ -234,12 +258,13 @@ TEST_CASE("get_time with SECONDS scale after 50ms sleep returns a small fraction
 // AUTO scale selection
 // ─────────────────────────────────────────────────────────────────────────────
 
-TEST_CASE("AUTO scale selects NANOSECONDS for an immediately-queried timer", "[timer][auto]") {
+TEST_CASE("AUTO scale selects NANOSECONDS or MICROSECONDS for an immediately-queried timer", "[timer][auto]") {
   std::ostringstream oss;
   timer<float> t(static_cast<std::ostream &>(oss), timescale::AUTO, "", "");
   t.get_time(); // side-effect: sets scale based on elapsed time
-  // Elapsed time since construction is tiny, so should land in ns
-  CHECK(t.scale == timescale::NANOSECONDS);
+  // Elapsed time since construction is tiny, but clock resolution and scheduling
+  // may legitimately place it in either ns or μs.
+  CHECK((t.scale == timescale::NANOSECONDS || t.scale == timescale::MICROSECONDS));
 }
 
 TEST_CASE("AUTO scale selects MILLISECONDS after a 20ms sleep", "[timer][auto]") {
