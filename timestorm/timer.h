@@ -28,7 +28,7 @@ class timer {
   sink_t &sink;
 
 public:
-  std::chrono::time_point<std::chrono::system_clock> time_start = std::chrono::system_clock::now();
+  std::chrono::time_point<std::chrono::system_clock> time_start{std::chrono::system_clock::now()};
 
   std::function<std::string()> prefix;                                          // what to run to generate output when finished before the time value
   std::function<std::string()> suffix;                                          // what to run to generate output when finished after the time value
